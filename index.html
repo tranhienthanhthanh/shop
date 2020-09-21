@@ -9,22 +9,15 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="1.css">
-  <!-- <div class="container-fuild"> -->
   <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-light shadow" style="background-color: #FFD700;">
-    <a class="navbar-brand" href="index.php">
-
-    </a>
-    <a class="navbar-brand" href="index.php">
-
-    </a>
-    <a class="navbar-brand" href="index.php">
-
-    </a>
+  <nav class="navbar navbar-expand-lg navbar-light shadow" style=" background-image: linear-gradient(to right,rgb(49, 49, 49), 
+  rgb(2, 2, 2));">
+    <a class="navbar-brand" href=""></a>
+    <a class="navbar-brand" href=""></a>
+    <a class="navbar-brand" href=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,21 +26,93 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+          <a class="nav-link text-white" href="#"><i class="fa fa-home" aria-hidden="true"></i>Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item"></li>
+        <div class="d-flex">
+          <div class="dropdown mr-1 ">
+            <button type="button" class="btn btn-outline-light dropdown-toggle " id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+              The Products
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <a class="dropdown-item" href="#">Wall Light</a>
+              <a class="dropdown-item" href="#">Led Light</a>
+              <a class="dropdown-item" href="#">Sleep Light</a>
+            </div>
+          </div> 
+        </li>
+          <li class="nav-item"></li>
+        <a class="navbar-brand" href=""></a>
+        <li class="nav-item"></li>
+        <div class="d-flex">
+          <div class="dropdown mr-1">
+            <button type="button" class="btn btn-outline-light dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+              Contacts Us
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <a class="dropdown-item" href="#"><i class="fa fa-mobile" aria-hidden="true"></i>0916.217.367(Mrs.Thanh)</a>
+            </div>
+          </div> 
+        </li>
+        <a class="navbar-brand" href=""></a>
+        <li class="nav-item"></li>
+        <div class="d-flex">
+          <div class="dropdown mr-1 ">
+            <button type="button" class="btn btn-outline-light dropdown-toggle " id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+              Login
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              <a class="dropdown-item" href="#">New Account</a>
+            </div>
+          </div> 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">New Account</a>
+          <a class="nav-link text-white" href="#">Catalogue<span class="sr-only">(current)</span></a>
         </li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
-        </form>
       </ul>
-      <div class="card-header" style="background-color: #FFD700;"><i class="fa fa-facebook" aria-hidden="true"></i>
-      </div>
+      <div id="MyClockDisplay" class="clock"></div>
+      <script>
+        function showTime(){
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM"; 
+            if(h == 0){
+                h = 12;
+            }
+            if(h > 12){
+                h = h - 12;
+                session = "PM";
+            }
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;setTimeout(showTime, 1000);
+            }
+             showTime();
+      </script> 
+    <style>
+            .clock {
+            position: absolute;
+            top: 50%;
+            left: 65%;
+            transform: translateX(-50%) translateY(-50%);
+            color: white;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    </style>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
+        <a class="nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a class="nav-link" href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+        <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+      </form>
     </div>
   </nav>
-  <!-- </div> -->
   <div class="top-fuild">
     <div id="carousel-id" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -57,37 +122,21 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img data-src="" alt="First slide" src="./3.jpg">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 class="text-center">HOME DECORATION</h1>
-              
-              <!-- dặt sai chổ r -->
-              <!-- cái đang định làm nó là 1 thanh menu -->
-              <!-- thì làm 1 cái menu r chỉnh css cho nó để ngay vị trí là xong -->
-            </div>
-          </div>
+          <img data-src="" alt="First slide" src="./3231.jpg">s
         </div>
         <div class="carousel-item">
-          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="./2.jpg">
-          <div class="container">
+          <img data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide" src="./3231.jpg">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
+              <h1 class="text-center">HOME DECORATION<i class="fa fa-home" aria-hidden="true"></i></h1>
           </div>
         </div>
         <div class="carousel-item ">
-          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="./1.jpg">
-          <div class="container">
+          <img data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide" src="./3231.jpg">
+        
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
+              <h1 class="text-center">HOME DECORATION<i class="fa fa-home" aria-hidden="true"></i></h1>
+          </div>
+        </div>
           </div>
         </div>
       </div>
@@ -95,22 +144,20 @@
           class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#carousel-id" data-slide="next"><span
           class="glyphicon glyphicon-chevron-right"></span></a>
+          
     </div>
-    <!-- </div> -->
-    <!-- </div> --> 
-<!-- menu có nghĩa là danh sách các lựa chọn còn cái class menu nó chi là 1 cái tên thoi tên thikf muốn đặc j đặt làm 1 cái ,menu chưa chuwa tì làm đi mà cxais đó làm lâu lắm nên làm cái khác trươc đi ok -->
-    <!-- </div> -->
-    <!-- <!-làm sao để xuống hàng chèn hình tiếp. nãy tui có thử mà k đc. tui muốn chèn hình t5 ở dưới -->
-    <div class="text-center my-4 ">Wall Light</div> 
-    <!-- biết dùng git k. git la gi github. toafn tieng anh k ah hom co xai thu ma kho qua nen lenh tao tai khoản guthub đi -->
+    <div class="text-auto my-4">WALL LIGHT</div> 
     ​<div class="menu container-fluid">
       <div class="row">
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
           <div class="img img-list">
             <img src="/TKĐH/New folder/a.jpg" class="img-fluid img-thumbnail" style="width: 100%" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC015</h3>
+              <p>Price: 10.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+          <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
@@ -118,68 +165,362 @@
           <div class="img img-list">
             <img src="/TKĐH/New folder/b.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC020</h3>
+              <p>Price: 20.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+           <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
-          <div class="img">
-            <img src="/TKĐH/New folder/c.jpg" class="img-fluid img-thumbnail" style="width: 200px;" alt="hinh">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/c.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC821</h3>
+              <p>Price: 18.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+         <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
-          <div class="img">
-            <img src="/TKĐH/New folder/d.jpg" class="img-fluid img-thumbnail" style="width: 200px;" alt="hinh">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/d.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC1312</h3>
+              <p>Price: 11.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+           <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
-          <div class="img"> ổ C it gb lam luc aci win để bên G ahh
-            <img src="/TKĐH/New folder/d.jpg" class="img-fluid img-thumbnail" style="width: 200px;" alt="hinh">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/1.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC7076</h3>
+              <p>Price: 28.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
-          <div class="img">
-            <img src="/TKĐH/New folder/d.jpg" class="img-fluid img-thumbnail" style="width: 200px;" alt="hinh">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/2.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NCB218/12</h3>
+              <p>Price: 25.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
-          <div class="img">
-            <img src="/TKĐH/New folder/d.jpg" class="img-fluid img-thumbnail" style="width: 200px;" alt="hinh">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/3.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC9005/15</h3>
+              <p>Price: 22.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
-          <div class="img">
-            <img src="/TKĐH/New folder/d.jpg" class="img-fluid img-thumbnail" style="width: 200px;" alt="hinh">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/4.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
             <div class="txt">
-              <h3>AMAZING CAPTION</h3>
-              <p>Whatever It Is - Always Awesome</p>
+              <h3>Name: NC7076</h3>
+              <p>Price: 18.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="text-auto my-4 ">SLEEP LIGHT</div> 
+    ​<div class="menu container-fluid">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/f.jpg" class="img-fluid img-thumbnail" style="width: 100%" alt="hinh">
+            <div class="txt">
+              <h3>Name: NH568V</h3>
+              <p>Price: 2.500.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/g.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name:  NH544T</h3>
+              <p>Price: 1.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/h.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG8014</h3>
+              <p>Price: 7.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/i.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG8019A</h3>
+              <p>Price: 8.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/k.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG2992</h3>
+              <p>Price: 4.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/l.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG8792A</h3>
+              <p>Price: 3.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/m.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG8792B</h3>
+              <p>Price: 5.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/n.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name:  NG8026</h3>
+              <p>Price: 5.500.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-auto my-4 ">LED LIGHT</div> 
+    ​<div class="menu container-fluid">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/5.jpg" class="img-fluid img-thumbnail" style="width: 100%" alt="hinh">
+            <div class="txt">
+              <h3>Name:  NG2989</h3>
+              <p>Price: 7.900.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/6.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG001</h3>
+              <p>Price: 5.999.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/7.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NG8014</h3>
+              <p>Price: 7.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/8.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NH527V</h3>
+              <p>Price: 1.500.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/9.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NH526V</h3>
+              <p>Price: 2.000.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/v.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NH591-6W-T</h3>
+              <p>Price: 2.900.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/x.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+               <h3>Name: NH591-6W-T</h3>
+              <p>Price: 2.900.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-10">
+          <div class="img img-list">
+            <img src="/TKĐH/New folder/z.jpg" class="img-fluid img-thumbnail" style="width: 100%;" alt="hinh">
+            <div class="txt">
+              <h3>Name: NH577T</h3>
+              <p>Price: 1.200.000VNĐ</p>
+              <p>status: full</p>
+              <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true">Add to cart</i></a>
+              <button type="button" class="btn btn-outline-info btn-lg">VIEW PRODUCT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-auto my-2 ">UPCOMING SOON</div> 
+    <img src="/TKĐH/New folder/z.jpg" class="img-sm" style="width: 30%;" alt="hinh">
+    <hr class= "shadow"/>
+        <footer class="footer">
+          <nav class="navbar navbar-expand-lg navbar-light shadow-lg  " style=" background-image: linear-gradient(to right, rgb(49, 49, 49), 
+          rgb(2, 2, 2));">
+    ​             <div class="menu container-mb width:100% ">
+                  <div class="row">
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-5">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                             <a href="" class="footer_item-link">Hỗ Trợ</a> 
+                            </li>
+                            <li class="footer-item">
+                             <a href="" class="footer_item-link">Đối Tác</a>
+                          </li>
+                          <li class="footer-item">
+                             <a href="" class="footer_item-link">Tuyển Dụng</a>
+                          </li>
+                          <li class="footer-item">
+                             <a href="" class="footer_item-link">Kiểm Tra Đơn Hàng</a>
+                          </li>
+                        </ul>
+                  </div>
+                  <a class="navbar-brand" href=""></a>
+                  <a class="navbar-brand" href=""></a>
+                  <a class="navbar-brand" href=""></a>
+                  <a class="navbar-brand" href=""></a>
+                  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-5">
+                      <h3 class="footer__heading">THÔNG TIN</h3>
+                      <ul class="footer-list">
+                          <li class="footer-item">
+                           <a href="" class="footer_item-link">Chính sách và quy định chung</a>
+                          </li>
+                          <li class="footer-item">
+                           <a href="" class="footer_item-link">Quy định và hình thức thanh toán</a>
+                          </li>
+                          <li class="footer-item">
+                           <a href="" class="footer_item-link">Chính sách vận chuyển</a>
+                          </li>
+                          <li class="footer-item">
+                           <a href="" class="footer_item-link">Chính sách bảo hành - Đổi/trả</a>
+                          </li>
+                      </ul>
+                </div>
+                  <a class="navbar-brand" href=""></a>
+                  <a class="navbar-brand" href=""></a>
+                  <a class="navbar-brand" href=""></a>
+                  <a class="navbar-brand" href=""></a>
+               
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 mb-5">
+              <h3 class="footer__heading">THEO DÕI CHÚNG TÔI</h3>
+              <ul class="footer-list">
+                  <li class="footer-item">
+                   <a href="" class="footer_item-link"><i class="fa fa-facebook" aria-hidden="true"></i>FACEBOOK</a>
+                  </li>
+                  <li class="footer-item">
+                   <a href="" class="footer_item-link"><i class="fa fa-instagram" aria-hidden="true"></i>INSTAGRAM</a>
+                  </li>
+                  <li class="footer-item">
+                   <a href="" class="footer_item-link"><i class="fa fa-youtube-square" aria-hidden="true"></i>YOUTUBE</a>
+                  </li>
+              </ul>
+              </div>
+              </div>
+              </div>
+              </div>
+              <footer > Bản quyền &copy; 2020 bởi ThanhThanhDH18TH1.</footer>
+     </footer>
+      </div>
+    </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
